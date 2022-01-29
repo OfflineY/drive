@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+  <link rel="icon" href="favicon.ico">
   <script type="module"
     src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/ionicons/4.6.3/ionicons/ionicons.esm.js"></script>
   <script nomodule=""
@@ -176,7 +177,6 @@
 
     .preview {
       display: none;
-      font-size: 0.8em;
     }
 
     .content {
@@ -198,12 +198,13 @@
     .btn {
       float: right;
       text-align: center;
+      display: flex;
       font-size: 15px;
-      color: rgb(34, 34, 34);
-      border: solid rgb(182, 182, 182) 1px;
+      color: rgb(31, 31, 31);
+      background: rgb(236, 236, 236);
       border-radius: 5px;
       margin: 2em 0.3em;
-      padding: 0 10px;
+      padding: 5px 15px;
       line-height: 2em;
       user-select: none;
       -moz-user-select: none;
@@ -214,19 +215,25 @@
     }
 
     .btn .material-icons {
-      font-size: 15px;
-      margin: 5px 0 0 0;
+      width: 10px;
+      height: 10px;
+      line-height: 1.35!important;
+      color: rgb(80, 80, 80)!important;
+      margin-right: 20px;
     }
 
     .btn:hover {
-      color: white !important;
-      background: rgb(107, 107, 107);
-      border: solid rgb(56, 56, 56) 1px;
-      box-shadow: 0 1px 5px rgb(97, 97, 97);
+      background:rgb(190, 190, 190);
     }
 
     .btn.download {
       margin-right: 1em;
+    }
+
+    .hljs{
+      border-radius: 5px;
+      margin-top: 20px;
+      box-shadow: 0 1px 3px rgb(51, 51, 51);
     }
 
     #arrow-back,
@@ -244,6 +251,10 @@
       z-index: 19;
     }
 
+    .file-wrapper:hover{
+      background: #dbdbdb;
+    }
+
     .loading {
       color: rgb(255, 255, 255);
       background: rgb(107, 107, 107);
@@ -257,7 +268,7 @@
 
     ion-icon {
       font-size: 1.5em;
-      color: rgb(100, 100, 100);
+      color: rgb(80, 80, 80);
     }
 
     @font-face {
@@ -321,7 +332,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      border-bottom: solid rgb(218, 215, 215) 1px;
+      border-bottom: solid rgb(182, 182, 182) 1px;
     }
 
     .logo {
@@ -354,9 +365,12 @@
 
     #main-page:hover,
     .nav-path:hover,
-    .tree-node:hover,
-    .row.file-wrapper:hover {
-      color: rgb(90, 101, 133);
+    .tree-node:hover{
+      color: rgb(163, 163, 163);
+      cursor: pointer;
+    }
+
+    .row.file-wrapper:hover{
       cursor: pointer;
     }
 
@@ -376,8 +390,8 @@
     .left {
       position: absolute;
       background: #f1f1f1;
-      border-right: solid rgb(218, 215, 215) 1px;
-      padding-top: 10px;
+      border-right: solid rgb(182, 182, 182) 1px;
+      padding: 25px 0;
       width: 20%;
       height: 100%;
       font-size: 16px;
@@ -395,7 +409,7 @@
     }
 
     .tree-node-name {
-      margin-left: 0.3em;
+      margin-left: 0.6em;
       white-space: nowrap;
     }
 
@@ -442,7 +456,7 @@
       position: fixed;
       width: 80%;
       z-index: 999;
-      background: #fff;
+      background: #fff!important;
     }
 
     .list-header .name {
@@ -502,6 +516,10 @@
         width: 75%;
       }
 
+      .hljs{
+        margin: 3em 1em;
+      }
+
       .time {
         display: none;
       }
@@ -523,7 +541,7 @@
       }
 
       .markdown-body {
-        padding: 0.6em 0.3em;
+        padding: 0.6em 1em;
       }
 
       .file-name {
@@ -544,6 +562,10 @@
       }
     }
 
+    .sorry{
+      font-size: 100px;
+      color: #adadad;
+    }
   </style>
 </head>
 
@@ -586,14 +608,10 @@
       <div class="nav">
         <span id="path"> </span>
       </div>
-      <span class="site" id="nav-site" title="OneDrive个人版 (5G)"></span>
+      <span class="site" id="nav-site" title="OneDrive个人版 (1T)"></span>
       <a href="https://github.com/Offline2008/drive" style="color: rgb(37, 37, 37);" target='_ablank'>
         <i class="site material-icons" title="在 Github 查看此项目"
           style="padding: 5px 0 0 10px;font-size: 24px;">open_in_new</i>
-      </a>
-      <a href="https://github.com/Offline2008" style="color: rgb(37, 37, 37);" target='_ablank'>
-        <i class="site material-icons" title="访问作者 Github"
-          style="padding: 5px 0 0 10px;font-size: 24px;">account_circle</i>
       </a>
     </div>
   </div>
@@ -614,7 +632,7 @@
           </div>
         </div>
 
-        <div style="margin-top: 3em;"></div>
+        <div style="margin-top: 2.8em;"></div>
 
         <div id="file-list"></div>
         <div class="markdown-body">
@@ -1336,7 +1354,7 @@
           default:
             let textWrapper = document.createElement("div");
             textWrapper.style.textAlign = "center";
-            textWrapper.innerHTML = "该文件不支持预览";
+            textWrapper.innerHTML = "<br><br><i class='material-icons sorry'>sentiment_dissatisfied</i><br>抱歉，该文件不支持预览";
             content.innerHTML = "";
             content.appendChild(textWrapper);
             break;
@@ -1354,7 +1372,7 @@
             );
             const btn = document.querySelector(".btn.quote");
             btn.innerHTML = "已复制文件链接";
-            setTimeout(() => (btn.innerHTML = "已引用"), 2000);
+            setTimeout(() => (btn.innerHTML = "<i class='material-icons'>attachment</i> 引用"), 2000);
           });
         document
           .querySelector(".btn.share")
@@ -1376,7 +1394,7 @@
             );
             const btn = document.querySelector(".btn.share");
             btn.innerHTML = "已复制文件夹链接";
-            setTimeout(() => (btn.innerHTML = "已分享"), 2000);
+            setTimeout(() => (btn.innerHTML = "<i class='material-icons'>share</i> 分享"), 2000);
           });
         switchRightDisplay("preview");
 
