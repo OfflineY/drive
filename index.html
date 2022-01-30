@@ -9,8 +9,6 @@
     src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/ionicons/4.6.3/ionicons/ionicons.esm.js"></script>
   <script nomodule=""
     src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/ionicons/4.6.3/ionicons/ionicons.js"></script>
-  <link href="https://cdn.bootcdn.net/ajax/libs/material-design-icons/3.0.2/iconfont/material-icons.min.css"
-    rel="stylesheet" />
   <style>
     *::-webkit-scrollbar {
       width: 8px;
@@ -643,7 +641,7 @@
             <div class="file-name"></div>
             <div class="btn download"><i class="material-icons">cloud_download</i> 下载</div>
             <div class="btn quote"><i class="material-icons">attachment</i> 引用</div>
-            <div class="btn share"><ion-icon name="share-social-sharp"></ion-icon> 分享</div>
+            <div class="btn share"><ion-icon name="share-social"></ion-icon> 分享</div>
           </div>
           <div class="content"></div>
         </div>
@@ -1394,7 +1392,7 @@
             );
             const btn = document.querySelector(".btn.share");
             btn.innerHTML = "已复制文件夹链接";
-            setTimeout(() => (btn.innerHTML = "<ion-icon name='share-social-sharp'></ion-icon> 分享"), 2000);
+            setTimeout(() => (btn.innerHTML = "<ion-icon name='share-social'></ion-icon> 分享"), 2000);
           });
         switchRightDisplay("preview");
 
