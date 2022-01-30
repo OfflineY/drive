@@ -643,7 +643,7 @@
             <div class="file-name"></div>
             <div class="btn download"><i class="material-icons">cloud_download</i> 下载</div>
             <div class="btn quote"><i class="material-icons">attachment</i> 引用</div>
-            <div class="btn share"><i class="material-icons">share</i> 分享</div>
+            <div class="btn share"><ion-icon name="share-social-sharp"></ion-icon> 分享</div>
           </div>
           <div class="content"></div>
         </div>
@@ -1394,7 +1394,7 @@
             );
             const btn = document.querySelector(".btn.share");
             btn.innerHTML = "已复制文件夹链接";
-            setTimeout(() => (btn.innerHTML = "<i class='material-icons'>share</i> 分享"), 2000);
+            setTimeout(() => (btn.innerHTML = "<ion-icon name='share-social-sharp'></ion-icon> 分享"), 2000);
           });
         switchRightDisplay("preview");
 
