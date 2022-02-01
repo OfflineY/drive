@@ -7,14 +7,10 @@
   <link rel="icon" href="favicon.ico">
   <script type="module"
     src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/ionicons/4.6.3/ionicons/ionicons.esm.js"></script>
-  <script nomodule=""
-    src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/ionicons/4.6.3/ionicons/ionicons.js"></script>
-  <link href="https://cdn.bootcdn.net/ajax/libs/material-design-icons/3.0.2/iconfont/material-icons.min.css"
-    rel="stylesheet" />
   <style>
     *::-webkit-scrollbar {
       width: 8px;
-      height: 0;
+      height: 8px;
     }
 
     *::-webkit-scrollbar-thumb {
@@ -214,12 +210,9 @@
       -ms-user-select: none;
     }
 
-    .btn .material-icons {
-      width: 10px;
-      height: 10px;
-      line-height: 1.35!important;
+    .btn ion-icon {
       color: rgb(80, 80, 80)!important;
-      margin-right: 20px;
+      margin:auto 10px auto 0;
     }
 
     .btn:hover {
@@ -233,7 +226,7 @@
     .hljs{
       border-radius: 5px;
       margin-top: 20px;
-      box-shadow: 0 1px 3px rgb(51, 51, 51);
+      border: 1px solid rgb(160, 160, 160);
     }
 
     #arrow-back,
@@ -479,7 +472,7 @@
       margin-left: auto;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 800px) { /*10000%*/
       .left {
         display: none;
       }
@@ -609,10 +602,6 @@
         <span id="path"> </span>
       </div>
       <span class="site" id="nav-site" title="OneDrive个人版 (1T)"></span>
-      <a href="https://github.com/Offline2008/drive" style="color: rgb(37, 37, 37);" target='_ablank'>
-        <i class="site material-icons" title="在 Github 查看此项目"
-          style="padding: 5px 0 0 10px;font-size: 24px;">open_in_new</i>
-      </a>
     </div>
   </div>
   <div class="container">
@@ -641,9 +630,9 @@
         <div class="preview">
           <div class="info">
             <div class="file-name"></div>
-            <div class="btn download"><i class="material-icons">cloud_download</i> 下载</div>
-            <div class="btn quote"><i class="material-icons">attachment</i> 引用</div>
-            <div class="btn share"><i class="material-icons">share</i> 分享</div>
+            <div class="btn download"><ion-icon name="cloud-download"></ion-icon> 下载</div>
+            <div class="btn quote"><ion-icon name="link"></ion-icon> 引用</div>
+            <div class="btn share"><ion-icon name="share"></ion-icon> 分享</div>
           </div>
           <div class="content"></div>
         </div>
@@ -1354,7 +1343,7 @@
           default:
             let textWrapper = document.createElement("div");
             textWrapper.style.textAlign = "center";
-            textWrapper.innerHTML = "<br><br><i class='material-icons sorry'>sentiment_dissatisfied</i><br>抱歉，该文件不支持预览";
+            textWrapper.innerHTML = "<br><br><ion-icon class='sorry' name='sad'></ion-icon><br>抱歉，该文件不支持预览";
             content.innerHTML = "";
             content.appendChild(textWrapper);
             break;
