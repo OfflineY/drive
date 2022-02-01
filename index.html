@@ -601,7 +601,7 @@
       <div class="nav">
         <span id="path"> </span>
       </div>
-      <span class="site" id="nav-site" title="OneDrive个人版 (1T)"></span>
+      <span class="site" id="nav-site"></span>
     </div>
   </div>
   <div class="container">
@@ -1383,7 +1383,7 @@
             );
             const btn = document.querySelector(".btn.share");
             btn.innerHTML = "已复制文件夹链接";
-            setTimeout(() => (btn.innerHTML = "<i class='material-icons'>share</i> 分享"), 2000);
+            setTimeout(() => (btn.innerHTML = "<ion-icon name='share-social'></ion-icon> 分享"), 2000);
           });
         switchRightDisplay("preview");
 
